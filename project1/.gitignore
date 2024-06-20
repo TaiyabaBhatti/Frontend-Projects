@@ -1,0 +1,5 @@
+# Ignore specific files
+src/document.txt
+
+#ignore folder
+dist/
