@@ -47,6 +47,8 @@ body{
 
 /* General */
 
+
+
 ul#navigation-tabs li{
     list-style: none;    
 }
@@ -82,6 +84,8 @@ ul#navigation-tabs .navtab .navlink{
     max-width: 200.6rem;
     padding-inline: 2rem;
     height: 100%;
+    position: relative;
+    z-index: 999;
     /* for responsiveness */
 }
 
@@ -264,7 +268,7 @@ box-shadow:var(--red-boxshadow);
 
 /* hero */
 
-#hero .container{
+.section .container{
     position: relative;
     z-index: 10;
 }
@@ -878,10 +882,12 @@ height: 45rem;
 /* testimonial */
 
 #testimonial{
-    overflow: hidden;
+    overflow:hidden;
     position: relative;
     padding-block: 9rem;
     background-color: var(--background-color2);
+   
+
 }
 
 #testimonial .preface-content .title-2{
@@ -893,8 +899,36 @@ color: var(--focus-font);
     font-size: 2.4rem;
 }
 
+ #testimonial .slider-carousel{ position: relative; height: 55rem; width: 100%; transition: transform 300ms ease-in ; -webkit-transition: transform 300ms ease-in ; -moz-transition: transform 300ms ease-in ; -ms-transition: transform 300ms ease-in ; -o-transition: transform 300ms ease-in ;
+}
+ #testimonial .carousel-container{
+  position: relative;
+  height: 100%;
+  width: 100%;
+    overflow: hidden;
+
+ }
+
+ #testimonial .slider-carousel .card:nth-child(1){
+    left: 0;
+ }
+
+  #testimonial .slider-carousel .card:nth-child(2){
+left: 690px;
+ }
+ #testimonial .slider-carousel .card:nth-child(3){
+    left: 1380px;
+     }
+     #testimonial .slider-carousel .card:nth-child(4){
+        left: 2070px;
+         }
+         #testimonial .slider-carousel .card:nth-child(5){
+            left: 2760px;
+             } 
+
+
 #testimonial .preface-content .card{
-    position: relative;
+    position: absolute;
     gap: 4rem;
     padding: 4rem;
     background-color: var(--focus-font);
@@ -903,8 +937,13 @@ color: var(--focus-font);
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;
     -o-border-radius: 0.3rem;
-    z-index: 999;
     margin-block: 6rem;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    width: 690px;
+    left: 0;
+    height: fit-content;
 }
 
 #testimonial .preface-content .card::before{
@@ -912,13 +951,13 @@ position: absolute;
 content: "";
 /* left: 0; */
 top: 20px;
-width: 105%;
+width: 100%;
 height: 100%;
 background-color: var(--focus-font);
 opacity: 10%;
 }
 
-#testimonial .preface-content .card .reviewer-block div{
+#testimonial .preface-content .card .reviewer-block div.flex{
 gap:0;
 align-items: start;
 }
@@ -998,19 +1037,20 @@ align-items: start;
     width: 70.8rem;
     height: 70.5rem;
      position: absolute;
+     z-index: -1;
 }
 
 #testimonial  .gradient-1{ 
       top:50%;
       left: -40rem;
-      z-index: 1;
+   
       transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);
 }
 
 #testimonial  .gradient-2{ 
       top:30%;
       right:-40rem;
-      z-index: 1;
+
       transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%);
 }
 
@@ -1021,6 +1061,7 @@ align-items: start;
 #testimonial #slider-buttons .slider-btn{
      width: 1.5rem;
       height: 1.5rem;
+      cursor: pointer;
       background-color: var(--focus-font); 
       opacity: 20%;
        border-radius:50% ; 
@@ -1032,6 +1073,7 @@ align-items: start;
 
 #testimonial #slider-buttons .slider-btn.active{
     opacity: 1;
+    
 }
 
 .request-form{
@@ -1308,7 +1350,14 @@ margin-top: 5rem;
         }
         #testimonial .preface-content .card{
         width: calc(100vw - 20rem);
+        height: fit-content;
     }
+
+   
+    #testimonial .carousel-container {
+        width: calc(100vw - 20rem)
+    }
+
     .layout-11 .main-content{
         max-width: 170.02rem;
         margin-inline: auto;
