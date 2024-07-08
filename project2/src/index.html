@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Merienda font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
+ <!-- Poppins font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+<script src="https://kit.fontawesome.com/24f84cfde2.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<main>
+
+    <header class="flex">
+
+     
+        <div class="left-head flex">
+            <div class="content flex">
+            <img src="./Images/logo.png" alt="Logo image" class="logo-img">
+            <h3>Car Rental</h3>
+            <p class="subtitle-small">premium service</p>
+        </div>
+        </div>
+        <div class="right-head flex">
+       <ul class="top-nav flex">
+      
+   <li>
+    <i class="fa-solid fa-envelope"></i>
+    <p class="nav-subtitle">Support@muskansheraz.com</p>
+</li>
+   <li>
+    <i class="fa-regular fa-clock" ></i>
+    <p class="nav-subtitle">Mon to Fri 8:00am to 6:00pm</p>
+   </li>
+   <li>
+    <i class="fa-solid fa-comment"></i>
+    <a href="#" class="nav-subtitle nav-link">online chat</a>
+   </li>
+
+        </ul>
+       <nav class="bottom-nav flex">
+      
+        <ul id="navigation-left" class="flex">
+            <li class="tab"><a href="#" class="nav-subtitle tab-link active">home</a></li>
+            <li class="tab"><a href="#" class="nav-subtitle tab-link">rent</a></li>
+            <li class="tab"><a href="#" class="nav-subtitle tab-link">share</a></li>
+            <li class="tab"><a href="#" class="nav-subtitle tab-link">ride</a></li>
+            <li class="tab"><a href="#" class="nav-subtitle tab-link">services</a></li>
+        </ul>
+
+<div class="navigation-right flex">
+
+<div class="sign-up flex">
+    <i class="fa-regular fa-circle-user"></i>
+    <a href="#" class="nav-subtitle nav-link">signup</a>
+</div>
+
+<div class="box flex">
+    <i class="fa-solid fa-phone-volume"></i>
+
+    <div class="box-content">
+<p class="smallet-text">call</p>
+<a href="#" class="nav-subtitle nav-link">+92 3332431081</a>
+
+    </div>
+</div>
+</div>
+       </nav>
+        </div>
+    </header>
+
+<section id="home">
+<div class="container flex">
+
+<div class="left-content flex">
+  
+    <h1 class="title-1">
+        Looking to save more on your rental car?
+    </h1>
+
+    <p class="subtext-1">Discover car rental option in your city. Select from a range of car options.</p>
+<button class="btn" id="home-btn">Book now</button>
+
+
+</div>
+<div class="right-content">
+
+    <img src="./Images/home-car.png" alt="home about car image">
+</div>
+
+
+</div>
+</section>
+
+
+
+<section id="procedure">
+<div class="container">
+
+    <div class="content flex">
+<div class="heading-block">
+    <p class="highlighted-text">
+        How it work
+    </p>
+<h1 class="title-2">Rentgo following 3 working steps</h1>
+</div>
+
+<div class="timeline">
+    <div class="step flex">
+        <div class="step-icon flex">
+        <i class="fa-solid fa-location-dot"></i>
+    </div>
+        <h1 class="sub-heading1">Choose a location</h1>
+        <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+
+    </div>
+
+<div class="marker mark-upside">
+    <img src="./Images/upside.png" alt="Vector image">
+</div>
+
+    <div class="step flex">
+        <div class="step-icon flex">
+        <i class="fa-solid fa-calendar"></i>
+        </div>
+        <h1 class="sub-heading1">Pick-up date</h1>
+        <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+    </div>
+    <div class="marker mark-downside flex">
+        <img src="./Images/downside.png" alt="Vector image">
+
+    </div>
+    <div class="step flex">
+        <div class="step-icon flex">
+        <i class="fa-solid fa-book-bookmark"></i>
+        </div>
+        <h1 class="sub-heading1">Book your car</h1>
+        <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+    </div>
+</div>
+
+
+
+    </div>
+
+    <div class="car-category flex">
+
+        <div class="category-block flex">
+        
+        <div class="selection flex">
+        <label for="company">select company</label>
+        <select name="Company" id="company">
+            <option value="All Company">All Company</option>
+        </select>
+        
+        </div>
+        <div class="selection flex">
+            <label for="model">select model</label>
+        <select name="Model" id="model">
+            <option value="All Model">All Model</option>
+        </select>
+        </div>
+        <div class="selection flex">
+            <label for="roof">select roof</label>
+        <select name="Roof" id="roof">
+            <option value="Open Roof">Open Roof</option>
+        </select>
+        </div>
+        <div class="selection flex">
+            <label for="fuel">select fuel</label>
+        <select name="Fuel" id="fuel">
+            <option value="All Fuel">All Fuel</option>
+        </select>
+        </div>
+        
+        <div class="selection flex">
+        <button class="selection-btn btn">search</button>
+        </div>
+        
+        </div>
+        
+        
+        </div>
+
+</div>
+</section>
+
+<section id="service">
+    <div class="container flex">
+
+<div class="serv-left-content">
+    <img src="./Images/car-blue.png" alt="Blue Car">
+</div>
+<div class="serv-right-content flex">
+    <div class="heading-block">
+        <p class="highlighted-text">
+            best services
+        </p>
+    <h1 class="title-2">Feel the best experience with our rental deals</h1>
+    </div>     
+    <div class="timeline">
+        <div class="step flex">
+            <div class="step-icon flex">
+                <i class="fa-regular fa-handshake" style="color: #ff6436;"></i>
+        </div>
+        <div class="step-content">
+            <h1 class="sub-heading2">deals for every budget</h1>
+            <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+        </div>
+        </div>
+        <div class="step flex">
+            <div class="step-icon flex">
+                <i class="fa-solid fa-bag-shopping" style="color: #ff6436;"></i>
+            </div>
+            <div class="step-content">
+            <h1 class="sub-heading2">best price guarented</h1>
+            <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+            </div>
+        </div>     
+        <div class="step flex">
+            <div class="step-icon flex">
+                <i class="fa-solid fa-headphones" style="color: #ff6436;"></i>
+            </div>
+            <div class="step-content">
+            <h1 class="sub-heading2">support 24/7</h1>
+            <p class="subtext-2">Discover car rental option in your city. Select from a range of car options.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+    </div>
+</section>
+
+<section id="our-brand">
+    <div class="container flex">
+        
+            <div class="heading-block">
+                <p class="highlighted-text">
+                    top brands
+                </p>
+            <h1 class="title-2">Explore our top Deals from Top Rated Dealers</h1>
+            </div>
+
+            <div class="car-selection-block">
+
+<div class="car-types">
+<div class="type active">
+   <img src="./Images/audi.png" alt="Audi car image" class="car-tag">
+    <p class="car-name subtext-3">audi</p>
+</div>
+<div class="type">
+    <img src="./Images/honda.png" alt="Honda car image" class="car-tag">
+    <p class="car-name subtext-3">honda</p>
+</div>
+<div class="type">
+    <img src="./Images/toyota.png" alt="toyota car image" class="car-tag">
+    <p class="car-name subtext-3">toyota</p>
+</div>
+<div class="type">
+    <img src="./Images/nissan.png" alt="Nissan car image" class="car-tag">
+    <p class="car-name subtext-3">nessan</p>
+</div>
+<div class="type">
+    <img src="./Images/tesla.png" alt="Tesla car image" class="car-tag">
+    <p class="car-name subtext-3">tesla</p>
+</div>
+<div class="type">
+
+    <p class="car-name subtext-3">explore all</p>
+</div>
+
+
+</div>
+
+
+<div class="car-gallery">
+
+<div class="item">
+<div class="item-image -block"></div>
+<div class="item-details">
+<h1 class=".sub-heading3">2020 Audi A4</h1>
+<p class="price"><span class="purchase-rate">$422</span>/month</p>
+<div class="car-properties">
+    <div class="ppt"></div>
+    <div class="ppt"></div>
+    <div class="ppt"></div>
+</div>
+<button class="btn">rent now</button>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+            </div>
+      
+            
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
