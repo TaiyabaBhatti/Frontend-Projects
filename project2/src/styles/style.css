@@ -96,10 +96,9 @@ line-height: 3rem;
 }
 
 .sub-heading4{
- 
-font-size: 20px;
+font-size: 2rem;
 font-weight: 400;
-line-height: 28.88px;
+line-height: 2.888rem;
 
 
 }
@@ -133,9 +132,9 @@ line-height: 3rem;
 
 .subtext-4{
 
-font-size: 14px;
+font-size: 1.4rem;
 font-weight: 400;
-line-height: 20.22px;
+line-height: 2.022rem;
 }
 
 .highlighted-text{  
@@ -232,7 +231,7 @@ line-height: 20.22px;
  }
 
 
- #reviews .heading-block,#experience .heading-block, #procedure .heading-block, #our-brand .heading-block
+ #customer-reviews .heading-block,#experience .heading-block, #procedure .heading-block, #our-brand .heading-block, #blog .heading-block
  {
     text-align: center;
 }
@@ -257,10 +256,51 @@ i.fa-check{
 }
 
 
-#reviews,#experience, #procedure, #our-brand,#service
+#footer,#customer-reviews,#experience, #procedure, #our-brand,#service, #blog 
 {
   padding-block: 5rem;
 }
+
+.car-feature p,.rent-button,.company-names .car-name, .blogRead-button{
+    text-transform: capitalize;
+    }
+
+
+    .left-head{
+        width: 20%;
+        padding-left: 2rem;
+    }
+
+    .footer-logo, .left-head{
+        align-items: center;
+    }
+    
+    .left-head .content, .footer-logo .content{
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+    }
+    
+    .logo-img{
+        width: 12rem;
+        height: 5rem;
+        object-fit: cover;
+    }
+    
+    
+    .left-head p.subtitle-small,.footer-logo  p.subtitle-small{
+        background-color: var(--marinda);
+        padding: 0.1rem 1rem;
+       
+    }
+    .left-head h3{
+        color: var(--font-black);
+    }
+
+    .footer-logo h3{
+color: var(--focus-font);
+font-family: Merienda;
+    }
 
 
 
@@ -294,35 +334,7 @@ header{
     font-weight: 400;
 }
 
-.left-head{
-    width: 20%;
-    align-items: center;
-    padding-left: 2rem;
-}
 
-.left-head .content{
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-}
-
-
-
-.logo-img{
-    width: 12rem;
-    height: 5rem;
-    object-fit: cover;
-}
-
-
-.left-head p.subtitle-small{
-    background-color: var(--marinda);
-    padding: 0.1rem 1rem;
-   
-}
-.left-head h3{
-    color: var(--font-black);
-}
 
 .bottom-nav, #navigation-left, .sign-up, .box, .top-nav, .top-nav li{
     align-items: center;
@@ -846,9 +858,7 @@ line-height: 3.6rem;
 .car-feature{
     gap: 1.5rem;
 }
-.car-feature p,.rent-button,.company-names .car-name{
-text-transform: capitalize;
-}
+
 
 .move-buttons{
 margin-top: 8rem;
@@ -1009,13 +1019,10 @@ text-transform: capitalize;
 
 /*  */
 
-#reviews{
+#customer-reviews{
     position: relative;
-/* background-image: url(../Images/bg-1.png);
-background-position: center;
-background-repeat: no-repeat; */
 }
-#reviews .bg-image{
+#customer-reviews .bg-image{
    position: absolute;
    top: 0;
    left: 0;
@@ -1027,73 +1034,381 @@ background-repeat: no-repeat; */
    object-fit: cover;
 }
 
-#reviews .container{
+#customer-reviews .container,.customer-review, .customer-review .message{
+    flex-direction: column;
+}
 
-display: flex;
-flex-direction: column;
-gap: 5rem;
+#customer-reviews .container{
+gap: 6rem;
+align-items: center;
 }
-#reviews .heading-block .highlighted-text, #reviews .heading-block .title-2{
-    color: var(--focus-font);
+
+#customer-reviews .separator{
+    gap: 1.5rem;
+   
 }
-#reviews .separator{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-#reviews .separator .separator-line{
+#customer-reviews .separator .separator-line{
     border-top: 0.3rem solid var(--border-color1);
-    width: 5.6rem;
-    
+    width: 5.6rem;   
 }
 i.fa-quote-left{
     color: var(--marinda);
     font-size: 1.3rem;
 }
 
-#reviews .slider{
-    display: flex;
-    justify-content: center;
+
+
+.customer-review:nth-child(odd) .message .subtext-2,.customer-bio .content .subtext-4, .customer-bio .content .sub-heading4,#customer-reviews .heading-block .highlighted-text, #customer-reviews .heading-block .title-2{
+    color: var(--focus-font);
+}
+
+
+
+.customer-perspectives{
+gap: 2rem;
+}
+
+.customer-review{
+    gap: 4rem;
+}
+.customer-review .message{
+    position: relative;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 54rem; 
+}
+
+.customer-review:nth-child(odd) .message{
+background-color: var(--neil-color);
+
+}
+
+.customer-review:nth-child(even) .message{
+    background-color: var(--background-color3);
+   
+    }
+
+    .customer-review:nth-child(even) .message .subtext-2{
+        color: var(--neil-color);
+    }
+
+    .customer-review .message .subtext-2{
+        font-family: Merienda;
+    }
+
+    .ratings{
+        gap: 1rem;
+        font-size: 1.6rem;
+        color: var(--marinda);
+    }
+
+
+
+.customer-review .message::after{
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 90%;
+    width: 2rem;
+    height: 2.5rem;
+    border-right: 2rem solid transparent;
+    
+}
+.customer-review:nth-child(odd) .message::after{
+    border-top: 2.5rem solid var(--neil-color);  
+}
+.customer-review:nth-child(even) .message::after{
+    border-top: 2.5rem solid var(--background-color3);  
+}
+
+
+.customer-bio{
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+}
+
+.customer-bio .content .subtext-4, .customer-bio .content .sub-heading4{
+    text-transform: capitalize;
+}
+
+.customer-bio .reviewer-pic{
+    width: 5rem;
+    height: 5rem;  
+}
+
+/* slider */
+.customer-reviews-slider{
     gap: 1rem;
 }
-#reviews .slider .slider-dots{
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 0.3rem solid var(--border-color1);
+.customer-reviews-slider .slider-dot,.customer-bio .reviewer-pic{
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
-#reviews .slider .slider-dots.active{
+.customer-reviews-slider .slider-dot{
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.3rem solid var(--border-color1);
+   
+}
+.customer-reviews-slider .slider-dot.active{
     border-color: var(--marinda);
     background-color: var(--marinda);
 }
 
-.costumer-perspective{
+
+/*  */
+
+
+#blog{
+
+}
+
+#blog .container{
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.newsfeed-gallery{
+    width: 100%;
+justify-content: space-evenly;
+gap: 5rem;
+flex-wrap: wrap;
+}
+
+.newsfeed-gallery .news-post{
+    flex-direction: column;
+    gap: 3rem;
+  
+    /* max-width: 51.8rem; */
+}
+
+
+.newsfeed-gallery .post-content{
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.blog-image{
+    max-width: 52.8rem;
+    height: 29.2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.post-content .sub-heading4{
+    font-weight: 700;
+    color: var(--marinda);
+}
+
+.post-content .sub-heading1, .post-content .subtext-4{
+   color: var(--font-color2);
+}
+
+.post-content p.subtext-4{
+    max-width: 52.8rem;
+}
+.blogRead-button{
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    padding-inline: 5rem;
+    padding-block: 1rem;
+}
+.blogRead-button a{ 
+    font-family: Merienda;
+font-size: 1.6rem;
+font-weight: 700;
+line-height: 2.31rem;
+    text-decoration: none; color: var(--focus-font); 
+}
+
+
+/*  */
+
+#footer{
+background-color: var(--neil-color);
+}
+
+#footer .container{
+    flex-direction: column;
+    gap: 5rem;
+}
+.about-details{
+gap: 10rem;
+}
+
+.about-details-content{
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.social-handles{
 display: flex;
 gap: 1rem;
 }
 
+.social-handles .social-links{
+
+}
+
+.social-links{
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 3.8rem;
+ height: 3.8rem;
+ border: 0.1rem solid var(--focus-font);
+ border-radius:50% ;
+ -webkit-border-radius:50% ;
+ -moz-border-radius:50% ;
+ -ms-border-radius:50% ;
+ -o-border-radius:50% ;
+}
+
+.social-image{
+width: 1.8rem;
+ height: 2rem;
+}
+
+.about-details-content .subtext-2{
+color: var(--focus-font);
+max-width: 50.0rem;
+}
 
 
-.costumer-review{
-    display: flex;
+table.about-details-links{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header{
+
+}
+
+.table-header tr th{
+font-family: Merienda;
+font-size: 2rem;
+font-weight: 700;
+line-height: 2.888rem;
+}
+
+.table-header tr th, .table-body .link-page{
+color: var(--focus-font);
+text-transform: capitalize;
+text-align: left;
+padding-right: 3rem;
+}
+
+.table-header tr th{
+    padding-bottom: 2rem;
+}
+
+
+.table-body{
+    
+}
+.table-body tr{
+    
+}
+
+.table-body tr td{
+    
+}
+
+.table-body .link-page{
+    text-decoration: none;
+    font-family: Poppins;
+font-size: 1.6rem;
+font-weight: 400;
+line-height: 2.4rem;
+}
+
+.subscription{
     flex-direction: column;
+    gap: 0.2rem;
+    max-width: 44.2rem;
+    margin: auto;
+}
+.subscription .subscription-title{
+/* text-align: start; */
+font-family: Poppins;
+font-size: 2rem;
+font-weight: 400;
+line-height: 3rem;
+color: var(--focus-font);
+text-transform: capitalize;
+
+}
+.subscription-input{
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--background-color3);
+    /* height: 5.6rem; */
 }
 
-.costumer-bio{
-    display: flex;
-    flex-direction: row-reverse;
+.subscription-input input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-inline: 2rem;
+}
+.subscription-input .subscription-button{
+    background-color: var(--marinda);
+    border: none;
+    padding: 1rem;
+   
+    /* cursor: pointer; */
+}
 
+.subscription-input .subscription-button i{
+    color: var(--focus-font);
+    font-size: 2.3rem;
 }
 
 
-.costumer-bio .content .subtext-4, .costumer-bio .content .sub-heading4{
-    text-transform: capitalize;
+.horizontal-line{
+    border-color:rgb(226 226 226 / 24%);
 }
 
 
+.copyright-text{
+    text-align: center;
+    font-weight: 400;
+    color: var(--focus-font);
+}
+
+.copyright-text .copyright-highlighted-text
+{
+    color: var(--marinda);
+font-weight: 700;
+}
 
 
+@media (width<=730px){
+    .about-details{
+        flex-direction: column;
+    }
+}
+
+@media (width<=410px) {
+    .blog-image {
+       
+       object-fit: cover;
+    }
+    .newsfeed-gallery .news-post {
+        
+        max-width: 100%;
+    }
+}
