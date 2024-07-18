@@ -29,12 +29,19 @@ html{
 /* font-size: 62.52%; */
 /* 43.75% */
 font-size: 43.75%;
+scroll-behavior:smooth;
 }
 
 body{
 background-color: var(--background-color1);
-}
+width: 100vw;
+overflow-x: hidden;
 
+/* scroll-snap-type: mandatory; */
+}
+main{
+    overflow-x: hidden;
+}
 
 /* General */
 
@@ -336,6 +343,7 @@ font-family: Merienda;
 
 
  header{
+    
     position: relative;
     box-shadow: var(--shadow1)    ;
     height: 13rem;
@@ -354,28 +362,44 @@ font-family: Merienda;
 flex-direction: column;
 }
 
-/* .menu-block{
-position: absolute;
-right: 50%;
-top:
-50%;
-background-color: #ff7979;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  
-}
-
-.menu-block i{
-    position: absolute;
-    color: var(--marinda);
-    font-size: 3rem;
-
-}
-
-.menu-block i.fa-xmark{
+.menu-block{
     display: none;
-} */
+    position: absolute;
+    right: 0;
+    top: -140%;
+    background-color:var(--marinda);
+    height: 25rem;
+    width: 25rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition:transform 0.5s linear ;
+    -webkit-transition:transform 0.5s linear ;
+    -moz-transition:transform 0.5s linear ;
+    -ms-transition:transform 0.5s linear ;
+    -o-transition:transform 0.5s linear ;
+}
+
+.menu-block i.fa-bars{
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    
+}
+.menu-block i{
+    color: var(--focus-font);
+    font-size: 3rem; 
+    position: absolute;
+    z-index: 999;
+    
+}
+.menu-block i.fa-xmark{
+        top:45%;
+        right: 5%;
+        
+}
 
 
 .right-head li{
@@ -463,6 +487,43 @@ gap: 1rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
 } 
+
+.rotate-menu {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+.rotate-nav {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+.rotate-menu-default {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+}
+.rotate-nav-default {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+
+
+
+
+
+
+
 
 /* home */
 
@@ -800,14 +861,18 @@ flex-direction: column;
 }
 
 .view-all-cars{
-    text-decoration: none;
-    color: inherit;
+  
 }
-.company-names .car-make.active{
+.company-names .active{
     background-color: var(--marinda);
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -ms-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
 }
 
-.company-names .car-make.active .subtext-3{
+.company-names .car-make.active .subtext-3,.company-names .car-make.active{
     color: var(--focus-font);
 } 
 
@@ -1204,6 +1269,7 @@ background-color: var(--neil-color);
     width: 1.2rem;
     height: 1.2rem;
     border: 0.3rem solid var(--border-color1);
+    cursor: pointer;
    
 }
 .customer-reviews-slider .slider-dot.active{
@@ -1615,8 +1681,57 @@ margin-top: 10rem;
 
 @media (width<=695px) {
     .right-head{
-display: none;
+        position: absolute;
+        right: 0;
+        padding-block: 2rem;
+        z-index: 999;
+        top: 55%;
+        background-color: white;
+        width: fit-content;
+        height: 91vh;
+        transform-origin:top right;
+        transition: transform 0.5s linear;
+        -webkit-transition: transform 0.5s linear;
+        -moz-transition: transform 0.5s linear;
+        -ms-transition: transform 0.5s linear;
+        -o-transition: transform 0.5s linear;
+      
+      
+}
+    .menu-block{
+display: block;
     }
+
+    .top-nav{
+flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 5rem;
+    }
+.bottom-nav{
+    flex-direction: column;
+    padding-block: 2rem;
+    padding-inline: 5rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.navigation-right {
+   flex-wrap: wrap;
+   gap: 2rem;
+}
+
+#navigation-left {
+    gap: 2rem;
+    padding-block: 0.8rem;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+.top-nav::after {
+    display: none;
+}
+
+
 }
 
 
