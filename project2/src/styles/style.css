@@ -1175,13 +1175,45 @@ i.fa-quote-left{
     color: var(--focus-font);
 }
 
+.customer-crausel {
+    position: relative;
+    overflow: hidden;
+    max-width: 113rem;
+}
+
+
+/* .customer-crausel .customer-perspectives:nth-child(1)  */
+
+.customer-crausel .customer-perspectives.active{
+    display: flex;
+    transform: translateX(0rem);
+    -webkit-transform: translateX(0rem);
+    -moz-transform: translateX(0rem);
+    -ms-transform: translateX(0rem);
+    -o-transform: translateX(0rem);
+}
+
+.customer-crausel .slider-block{
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transition: transform 0.5s linear;
+    -webkit-transition: transform 0.5s linear;
+    -moz-transition: transform 0.5s linear;
+    -ms-transition: transform 0.5s linear;
+    -o-transition: transform 0.5s linear;
+}
 
 
 .customer-perspectives{
 gap: 2rem;
 flex-wrap: wrap;
 justify-content: center;
-
+margin-bottom: 5rem;
 }
 
 .customer-review{
@@ -1192,7 +1224,9 @@ justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 3rem;
-    max-width: 54rem; 
+    max-width: 54rem;
+    min-width: 54rem;
+    min-height: 117px;
 }
 
 .customer-review:nth-child(odd) .message{

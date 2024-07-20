@@ -104,7 +104,6 @@ checkingHeaderNav();
 
 
 const companyNames = document.querySelectorAll(".company-names .car-make");
-const sliderButtons = document.querySelectorAll(".customer-reviews-slider .slider-dot")
 
 
 
@@ -214,51 +213,59 @@ let carImage, itemDetails,
                                     }
     ];
 
+
+function createElements(obj){
+    carListing = document.createElement("div");
+    carListing.classList.add("car-listing","flex");
+    carImage = document.createElement("div");
+    carImage.classList.add("car-image");
+    itemDetails = document.createElement("div");
+    itemDetails.classList.add("item-details","flex");
+     itemDetails.innerHTML=`
+     <h1 class="sub-heading3 car-title">${obj.titleText1}<span class="filter-text">${obj.titleText2}</span>${obj.titleText3}</h1>
+     <p class="car-price"><span class="purchase-rate">${obj.paraText1}</span>${obj.paraText2}</p>
+       <div class="car-features flex">
+     <div class="car-feature flex">
+        <i class="fa-solid fa-car"></i>
+        <p class="subtext-2">${obj.featureOne}</p>
+    </div>
+    <div class="car-feature flex">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <p class="subtext-2">${obj.featureTwo}</p>
+    </div>
+    <div class="car-feature flex">
+        <i class="fa-solid fa-gas-pump"></i>
+        <p class="subtext-2">${obj.featureThree}</p>
+    </div>
+    </div>
+    <button class="btn rent-button">rent now</button>
+     `;
+    
+      poster = document.createElement("img");
+     poster.setAttribute("alt","Car Image");
+     poster.setAttribute("src",`${obj.poster}`);
+    
+     likedIcon = document.createElement("i");
+     likedIcon.classList.add("fa-regular","fa-heart", "car-like");
+    
+    
+    
+     
+     carImage.appendChild(poster);
+     carImage.appendChild(likedIcon);
+    
+     carListing.appendChild(carImage);
+     carListing.appendChild(itemDetails);
+
+     return carListing;
+
+}
+
+
  function crauselDisplay(results){
     carGallery.innerHTML=""; 
  results.forEach((obj)=>{
-carListing = document.createElement("div");
-carListing.classList.add("car-listing","flex");
-carImage = document.createElement("div");
-carImage.classList.add("car-image");
-itemDetails = document.createElement("div");
-itemDetails.classList.add("item-details","flex");
- itemDetails.innerHTML=`
- <h1 class="sub-heading3 car-title">${obj.titleText1}<span class="filter-text">${obj.titleText2}</span>${obj.titleText3}</h1>
- <p class="car-price"><span class="purchase-rate">${obj.paraText1}</span>${obj.paraText2}</p>
-   <div class="car-features flex">
- <div class="car-feature flex">
-    <i class="fa-solid fa-car"></i>
-    <p class="subtext-2">${obj.featureOne}</p>
-</div>
-<div class="car-feature flex">
-    <i class="fa-solid fa-arrows-rotate"></i>
-    <p class="subtext-2">${obj.featureTwo}</p>
-</div>
-<div class="car-feature flex">
-    <i class="fa-solid fa-gas-pump"></i>
-    <p class="subtext-2">${obj.featureThree}</p>
-</div>
-</div>
-<button class="btn rent-button">rent now</button>
- `;
-
-  poster = document.createElement("img");
- poster.setAttribute("alt","Car Image");
- poster.setAttribute("src",`${obj.poster}`);
-
- likedIcon = document.createElement("i");
- likedIcon.classList.add("fa-regular","fa-heart", "car-like");
-
-
-
- 
- carImage.appendChild(poster);
- carImage.appendChild(likedIcon);
-
- carListing.appendChild(carImage);
- carListing.appendChild(itemDetails);
- carGallery.appendChild(carListing);
+ carGallery.appendChild(createElements(obj));
  })
  }
 
@@ -273,12 +280,6 @@ const filterOut = (carMake) => {
         crauselDisplay(searched);
         // include() will check for every letter being typed
     }
-
-
-
-
-
-
 
 crauselDisplay(carListingObj);
 function highlightFilter(nameBlockArgu){
@@ -306,34 +307,7 @@ nameBlock.addEventListener("click",()=>{
 });
 })
 
-function moveSliderdots(sliderDot){
-
-sliderButtons.forEach((dot)=>{
-
-if(dot.classList.contains("active")){
-    dot.classList.remove("active")
-    sliderDot.classList.add("active")
-}
-
-
-})
-
-}
-
-
-sliderButtons.forEach((dot)=>{
-
-dot.addEventListener("click",()=>{
-
-moveSliderdots(dot);
-
-})
-
-})
-
-
-
-
+// our brand crausel filter effect ends
 
 
     window.addEventListener("resize",()=>{
@@ -378,3 +352,38 @@ moveSliderdots(dot);
 
 
 
+// slider crausel
+
+
+ 
+    
+const sliderButtonsTrack = document.querySelector(".customer-reviews-slider");
+const dots=Array.from(sliderButtonsTrack.children);
+const customerCrausel = document.querySelector(".customer-crausel");
+const crauselBlock = Array.from(customerCrausel.querySelectorAll(".customer-perspectives"));
+let activeDot=dots[0];
+let activeIndex=0;
+let targetSlide;
+let currentSlide;
+
+
+    const movetoSlide =()=>{
+ targetSlide=crauselBlock[dots.indexOf(activeDot)];
+ currentSlide=customerCrausel.querySelector(".active")
+    currentSlide.classList.remove("active");
+    targetSlide.classList.add("active");
+        }
+        
+for(let circle of dots){
+    circle.addEventListener("click",function (){
+     activeDot.classList.remove("active");
+     activeDot=circle;
+     activeDot.classList.add("active");
+     movetoSlide();
+    });
+}
+
+
+document.querySelector('button[type="submit"]').addEventListener("click", function(event){
+    event.preventDefault();
+  });

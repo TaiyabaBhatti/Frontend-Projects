@@ -41,10 +41,6 @@ const leftValue = computedStyle.getPropertyValue('left');
 movetoSlide(carousel,currentSlide,targetSlide,leftValue);
 });
 
-
-
-
-
 for(let circle of dots){
     circle.addEventListener("click",function (){
      activeDot.classList.remove("active");
@@ -57,10 +53,6 @@ for(let circle of dots){
 
 document.querySelector('input[type="submit"]').addEventListener("click", function(event){
   event.preventDefault();
- 
-
-
-
 });
 
 
