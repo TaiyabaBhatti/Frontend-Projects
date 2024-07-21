@@ -320,7 +320,9 @@ color: var(--focus-font);
 font-family: Merienda;
     }
 
-
+.car-title{
+    text-transform: capitalize;
+}
 
 /* General */
 
@@ -528,7 +530,7 @@ gap: 1rem;
 /* home */
 
  #home{
-    background-image: url(../Images/bg-1.png);
+    background-image: url(../../dist/image/bg-1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -2,8 +2,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
     let screenWidth=window.innerWidth;
     let isDoubleClick=true;
-
-
 const carCategory =document.querySelector(".car-category");
 const categoryBlock =document.querySelector(".category-block");
 const dropDown =  carCategory.querySelector(".fa-caret-down");
@@ -92,22 +90,8 @@ window.addEventListener("resize",checkingHeaderNav);
 checkingHeaderNav();
 
 //  Menu Toggling ends
-
-
-
-
-
-
-
-
-
-
-
-const companyNames = document.querySelectorAll(".company-names .car-make");
-
-
-
 // our brand crausel filter effect 
+const companyNames = document.querySelectorAll(".company-names .car-make");
 const carGallery=document.querySelector("#our-brand .gallery");
 let carImage, itemDetails,
  carListing,poster,likedIcon;
@@ -212,8 +196,6 @@ let carImage, itemDetails,
                                     poster:"./Images/item-3.png"
                                     }
     ];
-
-
 function createElements(obj){
     carListing = document.createElement("div");
     carListing.classList.add("car-listing","flex");
@@ -222,7 +204,7 @@ function createElements(obj){
     itemDetails = document.createElement("div");
     itemDetails.classList.add("item-details","flex");
      itemDetails.innerHTML=`
-     <h1 class="sub-heading3 car-title">${obj.titleText1}<span class="filter-text">${obj.titleText2}</span>${obj.titleText3}</h1>
+     <h1 class="sub-heading3 car-title">${obj.titleText1} <span class="filter-text">${obj.titleText2}</span> ${obj.titleText3}</h1>
      <p class="car-price"><span class="purchase-rate">${obj.paraText1}</span>${obj.paraText2}</p>
        <div class="car-features flex">
      <div class="car-feature flex">
@@ -256,7 +238,7 @@ function createElements(obj){
     
      carListing.appendChild(carImage);
      carListing.appendChild(itemDetails);
-
+    
      return carListing;
 
 }
@@ -265,7 +247,9 @@ function createElements(obj){
  function crauselDisplay(results){
     carGallery.innerHTML=""; 
  results.forEach((obj)=>{
+  
  carGallery.appendChild(createElements(obj));
+
  })
  }
 
@@ -278,7 +262,7 @@ const filterOut = (carMake) => {
         return car.titleText2.toLowerCase()
         .includes(carName.toLowerCase())});
         crauselDisplay(searched);
-        // include() will check for every letter being typed
+      
     }
 
 crauselDisplay(carListingObj);
@@ -308,8 +292,6 @@ nameBlock.addEventListener("click",()=>{
 })
 
 // our brand crausel filter effect ends
-
-
     window.addEventListener("resize",()=>{
         screenWidth=window.innerWidth;
         
@@ -353,10 +335,6 @@ nameBlock.addEventListener("click",()=>{
 
 
 // slider crausel
-
-
- 
-    
 const sliderButtonsTrack = document.querySelector(".customer-reviews-slider");
 const dots=Array.from(sliderButtonsTrack.children);
 const customerCrausel = document.querySelector(".customer-crausel");
@@ -365,8 +343,6 @@ let activeDot=dots[0];
 let activeIndex=0;
 let targetSlide;
 let currentSlide;
-
-
     const movetoSlide =()=>{
  targetSlide=crauselBlock[dots.indexOf(activeDot)];
  currentSlide=customerCrausel.querySelector(".active")
@@ -382,6 +358,13 @@ for(let circle of dots){
      movetoSlide();
     });
 }
+
+// Slider ends
+
+
+
+
+
 
 
 document.querySelector('button[type="submit"]').addEventListener("click", function(event){
