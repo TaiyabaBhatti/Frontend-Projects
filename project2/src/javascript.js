@@ -301,33 +301,35 @@ nameBlock.addEventListener("click",()=>{
  
 
 
-    // liked un like
-    const carImages = document.querySelectorAll(".car-image");
-    let childLike;
+    // liked un lik((e
+const likeActive =(clickedElement) => {
+    const parent = clickedElement.parentElement;
+    const childLike = parent.querySelector(".car-like");
 
-    function likeActive(car){
-        if(isDoubleClick){
-            car.classList.add("liked");
-            car.classList.remove("fa-regular");
-            car.classList.add("fa-solid");
-            isDoubleClick=false;
-            }
-            else{
-                car.classList.remove("liked");
-                car.classList.add("fa-regular");
-                car.classList.remove("fa-solid"); 
-                isDoubleClick=true;
-            }
-    }
-    
+    if(isDoubleClick){
+        childLike.classList.add("liked");
+        childLike.classList.remove("fa-regular");
+        childLike.classList.add("fa-solid");
+        isDoubleClick=false;
+        }
+        else{
+            childLike.classList.remove("liked");
+            childLike.classList.add("fa-regular");
+            childLike.classList.remove("fa-solid"); 
+            isDoubleClick=true;
+        }
 
-    carImages.forEach((car) => {
-        car.addEventListener("dblclick",()=>{
-            childLike = car.querySelector(".car-like");
-        likeActive(childLike);
-        });
-        });
+
+}  
+    document.addEventListener("dblclick",(e) => {
+     const clickedElement = e.target;
+     if(clickedElement.matches(".car-image img")){
+        likeActive(clickedElement);
+}
     });
+
+    
+   
 
 // liked unlike ends
 
@@ -370,3 +372,5 @@ for(let circle of dots){
 document.querySelector('button[type="submit"]').addEventListener("click", function(event){
     event.preventDefault();
   });
+
+});
